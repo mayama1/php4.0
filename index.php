@@ -52,7 +52,7 @@ session_start();
             当前登录者：<?php echo $_SESSION['loggedUsername'];?> <a href="logout.php">注销</a>
             <a href="javascript:open('singup.php','用户注册')">注册</a>
             <a href="javascript:open('modify.php','修改资料')">修改资料</a>
-            <?php if($_SESSION['isAdmin']){?> <a href="admin.php">后台管理</a><?php }?>
+            <?php if($_SESSION['isAdmin']){?> <a href="admin1.0.php">后台管理</a><?php }?>
             <?php
         }
         else{

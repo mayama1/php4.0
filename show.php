@@ -34,14 +34,14 @@ include_once "checkAdmin.php"
 </head>
 <body>
 <h1>照片管理</h1>
-<h2><a href="index.php">返回首页</a>  <a href="admin.php">图片管理</a>
-    <a href="show.php" class="current">数据查看</a>   <a href="logout.php">注销 </a></h2>
+<!--<h2><a href="index.php">返回首页</a>  <a href="admin1.0.php">图片管理</a>-->
+<!--    <a href="show.php" class="current">数据查看</a>   <a href="logout.php">注销 </a></h2>-->
 <div id="main" style="width: 600px;height: 400px;"></div>
 <script type="text/javascript">
     var myChart = echarts.init(document.getElementById('main'));
     myChart.setOption({
         title: {
-            text: '车辆票数柱状图'
+            text: '最受欢迎照片票数柱状图'
         },
         tooltip: {},
         legend: {

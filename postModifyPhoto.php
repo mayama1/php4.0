@@ -46,7 +46,7 @@ if($fileName){
 }
 $result=mysqli_query($conn,$sql);
 if($result){
-    echo "<script>alert('资料修改成功');location.href='admin.php';</script>";
+    echo "<script>alert('资料修改成功');location.href='admin1.0.php';</script>";
 }else{
     echo "<script>alert('资料修改失败');history.back();</script>";
     exit;

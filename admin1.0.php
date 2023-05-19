@@ -41,12 +41,6 @@ $result=mysqli_query($conn,$sql);
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item layui-hide layui-show-md-inline-block">
-
-            </li>
-            <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
-                <a href="javascript:;">
-                    <i class="layui-icon layui-icon-more-vertical"></i>
-                </a>
             </li>
         </ul>
     </div>
@@ -55,22 +49,30 @@ $result=mysqli_query($conn,$sql);
         <div class="layui-side-scroll">
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                <li class="layui-nav-item"><a href="index.php;">返回首页</a></li>
+                <li class="layui-nav-item">
+                     <a href="index.php">返回首页</a>
+                </li>
                 <li class="layui-nav-item">
                     <a href="javascript:;">图片管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="photoAdd.php;">添加图片</a></dd>
+                        <dd><a href="photousage.php">管理图片</a></dd>
+                        <dd><a href="photoAdd.php">添加图片</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href="logout.php;">注销</a></li>
-                <li class="layui-nav-item"><a href="show.php">数据查看</a></li>
+                <li class="layui-nav-item">
+                   <dd> <a href="logout.php">注销</a></dd>
+                </li>
+                <li class="layui-nav-item">
+                    <dd><a href="show.php">数据查看</a></dd>
+                </li>
             </ul>
         </div>
     </div>
     <!-- 内容主体区域 -->
     <div class="layui-body">
+        <iframe id="iframeMain" src="" style="width: 100%"; height="100%";>
         <div style="padding: 15px;">
-<!--            //内容主体区域。记得修改 layui.css 和 js 的路径-->
+<!--            //内容主体区域-->
             <table border="0" width="100%" align="center">
                 <tr>
                     <td>
@@ -114,38 +116,46 @@ $result=mysqli_query($conn,$sql);
                         ?>
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        <h2>照片添加</h2>
-                        <form onsubmit="return check()" enctype="multipart/form-data" method="post" action="postAdd.php">
-                            <table width="70%" align="center" style="border-collapse: collapse;" border="1" bordercolor="gray" cellpadding="10" cellspacing="0" >
-                                <tr>
-                                    <td align="right">照片名称</td>
-                                    <td align="left"><input name="photoName" id="photoName"></td>
-                                </tr>
-                                <tr>
-                                    <td align="right">照片描述</td>
-                                    <td align="left"><textarea name="photoDesc" id="photoDesc"></textarea></td>
-                                </tr>
-                                <tr>
-                                    <td align="right">图片</td>
-                                    <td align="left"><input type="file" id="Pic" name="Pic"></td>
-                                </tr>
-                                <tr>
-                                    <td align="right"><input type="submit" value="添加"></td>
-                                    <td align="left"><input type="reset" value="重置"></td>
-                                </tr>
-                            </table>
-                        </form>
-                    </td>
-                </tr>
+<!--                <tr>-->
+<!--                    <td>-->
+<!--                        <h2>照片添加</h2>-->
+<!--                        <form onsubmit="return check()" enctype="multipart/form-data" method="post" action="postAdd.php">-->
+<!--                            <table width="70%" align="center" style="border-collapse: collapse;" border="1" bordercolor="gray" cellpadding="10" cellspacing="0" >-->
+<!--                                <tr>-->
+<!--                                    <td align="right">照片名称</td>-->
+<!--                                    <td align="left"><input name="photoName" id="photoName"></td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td align="right">照片描述</td>-->
+<!--                                    <td align="left"><textarea name="photoDesc" id="photoDesc"></textarea></td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td align="right">图片</td>-->
+<!--                                    <td align="left"><input type="file" id="Pic" name="Pic"></td>-->
+<!--                                </tr>-->
+<!--                                <tr>-->
+<!--                                    <td align="right"><input type="submit" value="添加"></td>-->
+<!--                                    <td align="left"><input type="reset" value="重置"></td>-->
+<!--                                </tr>-->
+<!--                            </table>-->
+<!--                        </form>-->
+<!--                    </td>-->
+<!--                </tr>-->
             </table>
         </div>
+        </iframe>
     </div>
 
 </div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="layui/layui.js"></script>
 <script>
+    $(document).ready(function(){
+        $("dd>a").click(function (e) {
+            e.preventDefault();
+            $("#iframeMain").attr("src",$(this).attr("href"));
+        });
+    });
     function del(id){
         layer.confirm('确认删除该图片?',{icon:3,title:'提示'},function (index){
             location.href="delPhoto.php?id="+id;

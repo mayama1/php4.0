@@ -21,7 +21,7 @@ include_once 'checkAdmin.php';
 </head>
 <body>
 <h1>照片管理</h1>
-<h2><a href="index.php">返回首页</a> <a href="admin.php" class="current">图片管理</a> <a href="show.php">数据查看</a> <a href="logout.php.php">注销</a></h2>
+<!--<h2><a href="index.php">返回首页</a> <a href="admin1.0.php" class="current">图片管理</a> <a href="show.php">数据查看</a> <a href="logout.php.php">注销</a></h2>-->
 <?php
 include_once 'conn.php';
 $id = $_GET['id'] ?? 0;

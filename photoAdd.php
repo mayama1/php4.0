@@ -30,8 +30,8 @@ include_once 'checkAdmin.php';
 </head>
 <body>
 <h1>照片管理</h1>
-<h2><a href="index.php">返回首页</a>  <a href="admin.php">图片管理</a>
-    <a href="show.php">数据查看</a>   <a href="logout.php">注销 </a></h2>
+<!--<h2><a href="index.php">返回首页</a>  <a href="admin.php">图片管理</a>-->
+<!--    <a href="show.php">数据查看</a>   <a href="logout.php">注销 </a></h2>-->
 <?php
 include_once 'conn.php';
 include_once 'page.php';
@@ -46,48 +46,48 @@ $sql="select * from photo order by id desc";
 $result=mysqli_query($conn,$sql);
 ?>
 <table border="0" width="100%" align="center">
-    <tr>
-        <td>
-            <table align="center" width="100%" border="1" bordercolor="black" cellspacing="0" cellpadding="10">
-                <tr>
-                    <td align="center" width="8%">序号</td>
-                    <td align="center" width="20%">名称</td>
-                    <td align="center" width="39%">描述</td>
-                    <td align="center" width="10%">图片</td>
-                    <td align="center" width="8%">当前票数</td>
-                    <td align="center" width="15%">操作</td>
-                </tr>
-                <?php
-                $i=($page-1)+$perpage+1;
-                while ($info=mysqli_fetch_array($result)){
-
-
-                    ?>
-                    <tr>
-                        <td align="center"><?php echo $i;?></td>
-                        <td align="center"><?php echo $info['photoName'];?></td>
-                        <td align="center"><?php echo $info['photoDesc'];?></td>
-                        <td align="center"><img class="img" src="img/<?php echo $info['Pic'];?>"></td>
-                        <td align="center"><?php echo $info['photoNum'];?></td>
-                        <td align="center">
-                            <a href="modifyPhoto.php?id=<?php echo $info['id'];?>">修改</a>
-                            <a href="javascript:del(<?php echo $info['id'];?>)">删除</a>
-                        </td>
-                    </tr>
-                    <?php
-                    $i++;
-                }
-                ?>
-            </table>
-        </td>
-    </tr>
-    <tr>
-        <td align="right">
-            <?php
-            echo $perpage;
-            ?>
-        </td>
-    </tr>
+<!--    <tr>-->
+<!--        <td>-->
+<!--            <table align="center" width="100%" border="1" bordercolor="black" cellspacing="0" cellpadding="10">-->
+<!--                <tr>-->
+<!--                    <td align="center" width="8%">序号</td>-->
+<!--                    <td align="center" width="20%">名称</td>-->
+<!--                    <td align="center" width="39%">描述</td>-->
+<!--                    <td align="center" width="10%">图片</td>-->
+<!--                    <td align="center" width="8%">当前票数</td>-->
+<!--                    <td align="center" width="15%">操作</td>-->
+<!--                </tr>-->
+<!--                --><?php
+//                $i=($page-1)+$perpage+1;
+//                while ($info=mysqli_fetch_array($result)){
+//
+//
+//                    ?>
+<!--                    <tr>-->
+<!--                        <td align="center">--><?php //echo $i;?><!--</td>-->
+<!--                        <td align="center">--><?php //echo $info['photoName'];?><!--</td>-->
+<!--                        <td align="center">--><?php //echo $info['photoDesc'];?><!--</td>-->
+<!--                        <td align="center"><img class="img" src="img/--><?php //echo $info['Pic'];?><!--"></td>-->
+<!--                        <td align="center">--><?php //echo $info['photoNum'];?><!--</td>-->
+<!--                        <td align="center">-->
+<!--                            <a href="modifyPhoto.php?id=--><?php //echo $info['id'];?><!--">修改</a>-->
+<!--                            <a href="javascript:del(--><?php //echo $info['id'];?><!--)">删除</a>-->
+<!--                        </td>-->
+<!--                    </tr>-->
+<!--                    --><?php
+//                    $i++;
+//                }
+//                ?>
+<!--            </table>-->
+<!--        </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td align="right">-->
+<!--            --><?php
+//            echo $perpage;
+//            ?>
+<!--        </td>-->
+<!--    </tr>-->
     <tr>
         <td>
             <h2>照片添加</h2>

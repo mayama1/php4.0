@@ -41,7 +41,7 @@ $sql="insert into photo (photoName, photoDesc, Pic, photoNum)
 values ('$photoName','$photoDesc','$fileName','0')";
 $result=mysqli_query($conn,$sql);
 if($result){
-    echo "<script>alert('添加图片成功');location.href='admin.php';</script>";
+    echo "<script>alert('添加图片成功');location.href='admin1.0.php';</script>";
 }else{
     echo "<script>alert('添加图片失败');history.back();</script>";
     exit;
