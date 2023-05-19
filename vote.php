@@ -37,7 +37,7 @@ if($info['num'] == 5){
     exit;
 }
 //第2个条件
-//要求一人一天最多可以给三辆车投票
+//要求一人一天最多可以给三张图投票
 $sql = "select photoID from votedetail where userID = ".$_SESSION['loggedUserID']." and FROM_UNIXTIME(voteTime,'%Y-%m-%d') = '".date("Y-m-d")."' and photoID <> $id group by photoID";
 $result = mysqli_query($conn,$sql);
 $num = mysqli_num_rows($result);
@@ -80,7 +80,7 @@ if (!$result2) {
     printf("Error: %s\n", mysqli_error($conn));
     exit();
 }
-echo mysqli_error($result2);
+//echo mysqli_error($result2);
 if($result1 and $result2){
     mysqli_commit($conn);//提交操作
     echo "<script>alert('投票成功');location.href='index.php';</script>";
