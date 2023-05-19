@@ -34,16 +34,23 @@ include_once 'checkAdmin.php';
 <!--    <a href="show.php">数据查看</a>   <a href="logout.php">注销 </a></h2>-->
 <?php
 include_once 'conn.php';
+
 include_once 'page.php';
-$sql="select count(1) as total from photo";
+
+$sql="select count(id) as total from photo";
 $result=mysqli_query($conn,$sql);
 $info=mysqli_fetch_array($result);
 $total=$info['total'];//得到记录总数
 $perpage=4;//设置每页显示的数据多少
 $page=$_GET['page']??1;//读取当前页码
 paging($total,$perpage);//引用分页函数
-$sql="select * from photo order by id desc";
-$result=mysqli_query($conn,$sql);
+$sql = "select * from photo order by id  desc limit $firstCount,$displayPG";
+//echo $sql;
+$result= mysqli_query($conn,$sql);
+if (!$result) {
+    printf("Error: %s\n", mysqli_error($conn));
+    exit();
+}
 ?>
 <table border="0" width="100%" align="center">
     <tr>
@@ -58,10 +65,8 @@ $result=mysqli_query($conn,$sql);
                     <td align="center" width="15%">操作</td>
                 </tr>
                 <?php
-                $i=($page-1)+$perpage+1;
-                while ($info=mysqli_fetch_array($result)){
-
-
+                $i=($page-1)*$perpage+1;
+                while ($info = mysqli_fetch_array($result)){
                     ?>
                     <tr>
                         <td align="center"><?php echo $i;?></td>
@@ -84,7 +89,7 @@ $result=mysqli_query($conn,$sql);
     <tr>
         <td align="right">
             <?php
-            echo $perpage;
+            echo $pageNav;
             ?>
         </td>
     </tr>

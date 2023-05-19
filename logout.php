@@ -1,4 +1,5 @@
 <?php
 session_start();
 session_destroy();
-header("Location:index.php");
+header("history.back();");
+echo ("您已注销账号");

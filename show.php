@@ -63,7 +63,12 @@ include_once "checkAdmin.php"
         success:function (data){
             myChart.setOption({
                 xAxis: {
-                    data: data.categories
+                    data: data.categories,
+                    axisLabel: {
+                        interval: 0,
+                        rotate: 35
+                    }
+
                 },
                 series: [{
                     name: '票数',

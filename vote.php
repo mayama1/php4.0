@@ -75,7 +75,7 @@ $sql2 = "insert into votedetail (userID, photoID, voteTime, ip) VALUES ('".$_SES
 mysqli_autocommit($conn,0); //取消自动提交
 $result1 = mysqli_query($conn,$sql1);
 //echo mysqli_error($conn);
-//$result2 = mysqli_query($conn,$sql2);
+$result2 = mysqli_query($conn,$sql2);
 if (!$result2) {
     printf("Error: %s\n", mysqli_error($conn));
     exit();
