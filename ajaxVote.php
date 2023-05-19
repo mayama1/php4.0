@@ -2,7 +2,7 @@
 session_start();
 //判断是否登录
 $a=array();
-if(!(isset($_SESSION['loggedUsername'])&& $_SESSION['loggedUsername'])){
+if(!(isset($_SESSION['loggedUsername'])|| $_SESSION['loggedUsername'])){
     $a['error']=1;
     $a['errMsg']='请先登录再访问本页面!';
     echo json_decode($a);
@@ -12,9 +12,9 @@ include_once 'conn.php';
 $id=$_GET['id']??'';
 $code=$_GET['code'];
 if(strtolower($_SESSION['captcha'])==strtolower($code)){
-    $_SESSION['captcha']=='';
+    $_SESSION['captcha']='';
 }else{
-    $_SESSION['captcha']=='';
+    $_SESSION['captcha']='';
     $a['error']=1;
     $a['errMsg']='验证码错误';
     echo json_decode($a);
@@ -71,7 +71,6 @@ $sql1="update photo set photonum = photoNum + 1 where id = $id";
 //第二步：更新votedetail、
 $sql2=" insert into votedetail (userID,photoID,voteTime,ip) values ('".$_SESSION['loggedUserID']."','$id','".time()."','".getip()."')";
 //引入事务机制
-echo $sql2;
 mysqli_autocommit($conn,0);
 $result1 = mysqli_query ($conn,$sql1);
 $result2 = mysqli_query ($conn,$sql2);
@@ -79,8 +78,8 @@ $result2 = mysqli_query ($conn,$sql2);
 //    printf("Error: %s\n", mysqli_error($conn));
 //    exit();
 //}
-echo $result2;
-mysqli_error($result2);
+//echo $result2;
+//mysqli_error($result2);
 if($result1 and $result2){
     mysqli_commit($conn);
     $a['error']=0;

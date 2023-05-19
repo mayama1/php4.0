@@ -48,37 +48,37 @@ $result=mysqli_query($conn,$sql);
 <table border="0" width="100%" align="center">
     <tr>
         <td>
-           <table align="center" width="100%" border="1" bordercolor="black" cellspacing="0" cellpadding="10">
-               <tr>
-                   <td align="center" width="8%">序号</td>
-                   <td align="center" width="20%">名称</td>
-                   <td align="center" width="39%">描述</td>
-                   <td align="center" width="10%">图片</td>
-                   <td align="center" width="8%">当前票数</td>
-                   <td align="center" width="15%">操作</td>
-               </tr>
-               <?php
-               $i=($page-1)+$perpage+1;
-               while ($info=mysqli_fetch_array($result)){
+            <table align="center" width="100%" border="1" bordercolor="black" cellspacing="0" cellpadding="10">
+                <tr>
+                    <td align="center" width="8%">序号</td>
+                    <td align="center" width="20%">名称</td>
+                    <td align="center" width="39%">描述</td>
+                    <td align="center" width="10%">图片</td>
+                    <td align="center" width="8%">当前票数</td>
+                    <td align="center" width="15%">操作</td>
+                </tr>
+                <?php
+                $i=($page-1)+$perpage+1;
+                while ($info=mysqli_fetch_array($result)){
 
 
-               ?>
-               <tr>
-                   <td align="center"><?php echo $i;?></td>
-                   <td align="center"><?php echo $info['photoName'];?></td>
-                   <td align="center"><?php echo $info['photoDesc'];?></td>
-                   <td align="center"><img class="img" src="img/<?php echo $info['Pic'];?>"></td>
-                   <td align="center"><?php echo $info['photoNum'];?></td>
-                   <td align="center">
-                       <a href="modifyPhoto.php?id=<?php echo $info['id'];?>">修改</a>
-                       <a href="javascript:del(<?php echo $info['id'];?>)">删除</a>
-                   </td>
-               </tr>
-               <?php
-                   $i++;
-               }
-               ?>
-           </table>
+                    ?>
+                    <tr>
+                        <td align="center"><?php echo $i;?></td>
+                        <td align="center"><?php echo $info['photoName'];?></td>
+                        <td align="center"><?php echo $info['photoDesc'];?></td>
+                        <td align="center"><img class="img" src="img/<?php echo $info['Pic'];?>"></td>
+                        <td align="center"><?php echo $info['photoNum'];?></td>
+                        <td align="center">
+                            <a href="modifyPhoto.php?id=<?php echo $info['id'];?>">修改</a>
+                            <a href="javascript:del(<?php echo $info['id'];?>)">删除</a>
+                        </td>
+                    </tr>
+                    <?php
+                    $i++;
+                }
+                ?>
+            </table>
         </td>
     </tr>
     <tr>
