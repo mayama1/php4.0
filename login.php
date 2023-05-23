@@ -41,7 +41,7 @@ session_start();
         }
         .layui-layout{
             height: 744px;
-            border: 1px solid red;
+            /*border: 1px solid red;*/
             background-image: url("img/bg.jpg");
             background-size: 100% 100%;
         }

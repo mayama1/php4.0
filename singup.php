@@ -41,7 +41,7 @@ session_start();
         }
         .layui-layout{
             height: 744px;
-            border: 1px solid red;
+            /*border: 1px solid red;*/
             background-image: url("img/bg.jpg");
             background-size: 100% 100%;
         }
@@ -54,7 +54,6 @@ session_start();
     <h2 style="text-align: center;font-size: 45px">投票系统</h2>
 <!--    <div class="layui-layout layui-layout-admin">-->
         <div class="layui-header" style="background-color: #4e4f4f2b;">
-
             <!-- 头部区域（可配合layui 已有的水平导航） -->
             <ul class="layui-nav layui-layout-left" style="left: 480px;">
                 <!-- 移动端显示 -->
