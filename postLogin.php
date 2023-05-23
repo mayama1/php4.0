@@ -44,7 +44,7 @@ if($num){
     }else{
         $_SESSION['isAdmin']=0;
     }
-    echo "<script>alert('登录成功');window.parent.location.reload();</script>";
+    echo "<script>alert('登录成功');location.href='index.php';</script>";
 
 }else{
     unset($_SESSION['isAdmin']);

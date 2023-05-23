@@ -93,31 +93,31 @@ if (!$result) {
             ?>
         </td>
     </tr>
-<!--    <tr>-->
-<!--        <td>-->
-<!--            <h2>照片添加</h2>-->
-<!--            <form onsubmit="return check()" enctype="multipart/form-data" method="post" action="postAdd.php">-->
-<!--                <table width="70%" align="center" style="border-collapse: collapse;" border="1" bordercolor="gray" cellpadding="10" cellspacing="0" >-->
-<!--                    <tr>-->
-<!--                        <td align="right">照片名称</td>-->
-<!--                        <td align="left"><input name="photoName" id="photoName"></td>-->
-<!--                    </tr>-->
-<!--                    <tr>-->
-<!--                        <td align="right">照片描述</td>-->
-<!--                        <td align="left"><textarea name="photoDesc" id="photoDesc"></textarea></td>-->
-<!--                    </tr>-->
-<!--                    <tr>-->
-<!--                        <td align="right">图片</td>-->
-<!--                        <td align="left"><input type="file" id="Pic" name="Pic"></td>-->
-<!--                    </tr>-->
-<!--                    <tr>-->
-<!--                        <td align="right"><input type="submit" value="添加"></td>-->
-<!--                        <td align="left"><input type="reset" value="重置"></td>-->
-<!--                    </tr>-->
-<!--                </table>-->
-<!--            </form>-->
-<!--        </td>-->
-<!--    </tr>-->
+    <!--    <tr>-->
+    <!--        <td>-->
+    <!--            <h2>照片添加</h2>-->
+    <!--            <form onsubmit="return check()" enctype="multipart/form-data" method="post" action="postAdd.php">-->
+    <!--                <table width="70%" align="center" style="border-collapse: collapse;" border="1" bordercolor="gray" cellpadding="10" cellspacing="0" >-->
+    <!--                    <tr>-->
+    <!--                        <td align="right">照片名称</td>-->
+    <!--                        <td align="left"><input name="photoName" id="photoName"></td>-->
+    <!--                    </tr>-->
+    <!--                    <tr>-->
+    <!--                        <td align="right">照片描述</td>-->
+    <!--                        <td align="left"><textarea name="photoDesc" id="photoDesc"></textarea></td>-->
+    <!--                    </tr>-->
+    <!--                    <tr>-->
+    <!--                        <td align="right">图片</td>-->
+    <!--                        <td align="left"><input type="file" id="Pic" name="Pic"></td>-->
+    <!--                    </tr>-->
+    <!--                    <tr>-->
+    <!--                        <td align="right"><input type="submit" value="添加"></td>-->
+    <!--                        <td align="left"><input type="reset" value="重置"></td>-->
+    <!--                    </tr>-->
+    <!--                </table>-->
+    <!--            </form>-->
+    <!--        </td>-->
+    <!--    </tr>-->
 </table>
 </body>
 <script>

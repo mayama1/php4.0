@@ -54,14 +54,19 @@ session_start();
             //说明已经登录了
             ?>
             当前登录者：<?php echo $_SESSION['loggedUsername'];?> <a href="logout.php">注销</a>
-            <a href="javascript:open('singup.php','用户注册')">注册</a>
-            <a href="javascript:open('modify.php','修改资料')">修改资料</a>
+            <a href="singup.php">注册</a>
+            <a href="modify.php">修改资料</a>
+<!--            <a href="javascript:open('singup.php','用户注册')">注册</a>-->
+<!--            <a href="javascript:open('modify.php','修改资料')">修改资料</a>-->
             <?php if($_SESSION['isAdmin']){?> <a href="admin1.0.php">后台管理</a><?php }?>
             <?php
         }
         else{
             ?>
-            <a href="javascript:open('login.php','用户登录')">登录</a> <a href="javascript:open('singup.php','用户注册')">注册</a>
+<!--            <a href="singup.php">注册</a>-->
+            <a href="login.php">登录</a>
+            <a href="modify.php">修改资料</a>
+             <a href="singup.php">注册</a>
             <?php
         }
         ?>
@@ -117,19 +122,19 @@ session_start();
     </div>
 </div>
 <script>
-    function open(url,title){
-        layer.open({
-            type: 2,
-            title:title,
-            area: ['700px', '450px'],
-            fixed: false, //不固定
-            maxmin: true,
-            content: url
-        });
-    }
-    function closeLayer(){
-        layer.closeAll();
-    }
+    // function open(url,title){
+    //     layer.open({
+    //         type: 2,
+    //         title:title,
+    //         area: ['700px', '450px'],
+    //         fixed: false, //不固定
+    //         maxmin: true,
+    //         content: url
+    //     });
+    // }
+    // function closeLayer(){
+    //     layer.closeAll();
+    // }
 </script>
 </body>
 </html>

@@ -49,7 +49,7 @@ $sql="insert into userinfo(username,pw,email) values ('$username','$pw','$email'
 $result=mysqli_query($conn,$sql);
 echo $result;
 if($result){
-    echo "<script>alert('数据插入成功！');window.parent.closeLayer()</script>";
+    echo "<script>alert('数据插入成功！');location.href='login.php'</script>";
 }else{
     echo "<script>alert('数据插入失败！');history.back()</script>";
     echo mysqli_error();
